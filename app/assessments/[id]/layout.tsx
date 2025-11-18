@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
-    <main className="bg-linear-to-b from-black h-screen relative overflow-x-clip px-4 via-[#4B19E6] to-black">
+    <main className="bg-linear-to-b from-black pb-12 min-h-screen relative overflow-x-clip px-4 via-[#4B19E6] to-black">
       <Blob />
       {children}
     </main>
