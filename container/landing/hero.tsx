@@ -48,7 +48,7 @@ const Hero = () => {
           className="object-cover object-center" 
           priority 
         />
-        <div className="absolute inset-0 bg-linear-to-r from-[#3712A8]/95 via-[#3712A8]/75 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#3712A8] via-[#3712A8]/40 to-transparent" />
       </div>
 
       <motion.div
@@ -58,8 +58,8 @@ const Hero = () => {
         className="relative z-20 min-h-screen flex items-center md:mt-32"
       >
         <div className="mx-auto px-4 sm:px-6 lg:px-12 w-full py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div className="text-white space-y-8 w-full" variants={itemVariants}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 items-center">
+            <motion.div className="text-white space-y-2 w-full" variants={itemVariants}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

@@ -88,7 +88,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="#"
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#3712A8] to-[#4B1BC8] rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="px-6 py-2.5 text-sm font-semibold text-white bg-linear-to-r from-[#3712A8] to-[#4B1BC8] rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Find My Career Path
             </Link>
@@ -149,7 +149,7 @@ const Navbar = () => {
                     <a
                       href={link.href}
                       onClick={(e) => handleSmoothScroll(e, link.href)}
-                      className="block px-4 py-3 text-sm font-medium text-[#12253B] hover:text-[#3712A8] hover:bg-gradient-to-r hover:from-purple-50 hover:to-transparent rounded-lg transition-all duration-300 cursor-pointer"
+                      className="block px-4 py-3 text-sm font-medium text-[#12253B] hover:text-[#3712A8] hover:bg-linear-to-r hover:from-purple-50 hover:to-transparent rounded-lg transition-all duration-300 cursor-pointer"
                     >
                       {link.name}
                     </a>
@@ -174,7 +174,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#3712A8] to-[#4B1BC8] rounded-lg hover:shadow-lg transition-all duration-300 text-center"
+                    className="block px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-[#3712A8] to-[#4B1BC8] rounded-lg hover:shadow-lg transition-all duration-300 text-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Find My Career Path

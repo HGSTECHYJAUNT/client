@@ -14,7 +14,7 @@ import Footer from "@/container/landing/footer";
 
 export default function Home () {
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white overflow-hidden">
       <Navbar />
       <Hero />
       <FreeCourses />
