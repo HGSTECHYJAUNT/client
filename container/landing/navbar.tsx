@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-lg shadow-lg" : "bg-white shadow-sm"
+        scrolled ? "bg-white/95 backdrop-blur-lg shadow-lg" : "bg-transparent shadow-sm"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="text-sm font-medium text-[#12253B] hover:text-[#3712A8] transition-all duration-300 relative group cursor-pointer"
+                className={`text-sm font-medium ${scrolled ? "text-[#12253B]" : "text-white"} hover:text-[#3712A8] transition-all duration-300 relative group cursor-pointer`}
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3712A8] group-hover:w-full transition-all duration-300" />
@@ -82,7 +82,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="#"
-              className="px-6 py-2.5 text-sm font-medium text-[#3712A8] border-2 border-[#3712A8] rounded-lg hover:bg-[#3712A8] hover:text-white transition-all duration-300 hover:scale-105"
+              className={`px-6 py-2.5 text-sm font-medium ${scrolled ? "text-[#3712A8]" : "text-black"} border-2 border-[#3712A8] rounded-lg hover:bg-[#3712A8] hover:text-white transition-all duration-300 hover:scale-105`}
             >
               Log In / Sign Up
             </Link>
