@@ -62,7 +62,7 @@ const Navbar = () => {
               alt="SkillLink"
               width={120}
               height={40}
-              className={`${scrolled ? "h-10" : "h-20 -ml-5"} w-auto`}
+              className={`${scrolled ? "h-10" : "h-20 max-sm:-ml-5"} w-auto`}
             />
           </Link>
 
@@ -123,7 +123,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden overflow-hidden border-t border-gray-100"
+              className={`lg:hidden overflow-hidden ${scrolled ? "bg-transparent border-t border-gray-100" : "bg-white -m-5"}`}
             >
               <motion.div
                 className="py-4 space-y-2"

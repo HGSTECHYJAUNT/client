@@ -17,29 +17,18 @@ const Hero = () => {
     },
   };
 
-
   const itemVariants = {
-    active: {
-        backgroundColor: "#f00"
-    },
-    inactive: {
-      backgroundColor: "#fff",
-      transition: { duration: 2 }
-    }
-  }
-
-  const floatingVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
+      y: 0,
+      transition: { duration: 0.6 }
+    }
   };
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden pt-20 md:pt-0" id="home">
+    <section className="relative w-full min-h-screen overflow-hidden" id="home">
+      {/* Background Image  */}
       <div className="absolute inset-0 z-0">
         <Image 
           src={heroImage} 
@@ -48,24 +37,26 @@ const Hero = () => {
           className="object-cover object-center" 
           priority 
         />
-        <div className="absolute inset-0 bg-linear-to-r from-[#3712A8] from-0%  via-[#3712a8be] via-50% to-transparent to-100%" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#3712A8] from-0% via-[#3712a8be] via-50% to-transparent to-100%" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#3712A8]/30 md:hidden" />
       </div>
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-20 min-h-screen flex items-center md:mt-32"
+        className="relative z-20 min-h-screen flex items-center mt-0 sm:mt-10 lg:mt-32 px-4"
       >
-        <div className="mx-auto px-4 sm:px-6 lg:px-12 w-full py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
-            <motion.div className="text-white space-y-2 w-full" variants={itemVariants}>
+        <div className="container mx-auto w-full">
+          <div className="">
+            <motion.div className="text-white space-y-4 sm:space-y-6 w-full" variants={itemVariants}>
+              {/* Heading */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   Find Your Perfect Skill.
                   <br />
                   <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-purple-200">
@@ -76,62 +67,67 @@ const Hero = () => {
                 </h1>
               </motion.div>
 
+              {/* Description */}
               <motion.p 
                 variants={itemVariants}
-                className="text-base md:text-lg lg:text-xl text-white/95 leading-relaxed max-w-xl"
+                className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 leading-relaxed max-w-2xl"
               >
                 We provide the personalized skills roadmap and African job market insights needed to
                 go from learning to earning guaranteed.
               </motion.p>
 
+              {/* CTA Buttons */}
               <motion.div 
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
                   <Link
                     href="/find-career-path"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#3712A8] font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl text-center group"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#3712A8] font-bold text-sm sm:text-base rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl text-center group"
                   >
                     Find My Career Path
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
                 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
                   <Link
                     href="/get-started"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 text-center group"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-bold text-sm sm:text-base rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 text-center group"
                   >
                     Get Started
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
               </motion.div>
 
+              {/* Stats Section */}
               <motion.div
                 variants={itemVariants}
-                className="flex items-center gap-8 py-8"
+                className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-8 py-6 sm:py-8"
               >
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white">10K+</div>
-                  <div className="text-sm text-white/80 mt-1">Active Learners</div>
+                <div className="text-center shrink-0">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">10K+</div>
+                  <div className="text-xs sm:text-sm text-white/80 mt-1">Active Learners</div>
                 </div>
-                <div className="w-px h-12 bg-white/30" />
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white">500+</div>
-                  <div className="text-sm text-white/80 mt-1">Free Courses</div>
+                <div className="w-px h-10 sm:h-12 bg-white/30" />
+                <div className="text-center shrink-0">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">500+</div>
+                  <div className="text-xs sm:text-sm text-white/80 mt-1">Free Courses</div>
                 </div>
-                <div className="w-px h-12 bg-white/30" />
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white">95%</div>
-                  <div className="text-sm text-white/80 mt-1">Success Rate</div>
+                <div className="w-px h-10 sm:h-12 bg-white/30" />
+                <div className="text-center shrink-0">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">95%</div>
+                  <div className="text-xs sm:text-sm text-white/80 mt-1">Success Rate</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -139,11 +135,12 @@ const Hero = () => {
         </div>
       </motion.div>
 
+      {/* Scroll Indicator  */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
