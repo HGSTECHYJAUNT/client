@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import skillLogo from "@/public/landing/Logo (1).svg";
+import Logo from "@/public/landing/footerLogo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,18 +51,18 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-lg shadow-lg" : "bg-transparent shadow-sm"
+        scrolled ? "bg-white/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-2 relative z-50">
             <Image
-              src={skillLogo}
+              src={scrolled ? skillLogo : Logo}
               alt="SkillLink"
               width={120}
               height={40}
-              className="h-10 w-auto"
+              className={`${scrolled ? "h-10" : "h-20 -ml-5"} w-auto`}
             />
           </Link>
 
@@ -82,7 +83,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="#"
-              className={`px-6 py-2.5 text-sm font-medium ${scrolled ? "text-[#3712A8]" : "text-black"} border-2 border-[#3712A8] rounded-lg hover:bg-[#3712A8] hover:text-white transition-all duration-300 hover:scale-105`}
+              className={`px-6 py-2.5 text-sm font-medium ${scrolled ? "text-[#3712A8]" : "text-white bg-linear-to-r from-[#3712A8] to-[#4B1BC8] "} border-2 border-[#3712A8] rounded-lg hover:bg-[#3712A8] hover:text-white transition-all duration-300 hover:scale-105`}
             >
               Log In / Sign Up
             </Link>
@@ -96,7 +97,7 @@ const Navbar = () => {
 
           <button
             onClick={toggleMenu}
-            className="lg:hidden relative z-50 p-2 rounded-lg hover:bg-purple-50 transition-colors"
+            className="lg:hidden relative z-50 p-2 rounded-lg bg-purple-50 transition-colors"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <motion.span

@@ -48,7 +48,7 @@ const Hero = () => {
           className="object-cover object-center" 
           priority 
         />
-        <div className="absolute inset-0 bg-linear-to-r from-[#3712A8] via-[#3712A8]/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#3712A8] from-0%  via-[#3712a8be] via-50% to-transparent to-100%" />
       </div>
 
       <motion.div
@@ -58,7 +58,7 @@ const Hero = () => {
         className="relative z-20 min-h-screen flex items-center md:mt-32"
       >
         <div className="mx-auto px-4 sm:px-6 lg:px-12 w-full py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
             <motion.div className="text-white space-y-2 w-full" variants={itemVariants}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -134,40 +134,6 @@ const Hero = () => {
                   <div className="text-sm text-white/80 mt-1">Success Rate</div>
                 </div>
               </motion.div>
-            </motion.div>
-
-            <motion.div 
-              className="hidden lg:block relative"
-              variants={floatingVariants}
-              animate="animate"
-            >
-              <div className="relative w-full h-full min-h-[500px]">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 5, 0],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-10 right-20 w-24 h-24 bg-linear-to-br from-amber-400 to-orange-500 rounded-full opacity-80 blur-2xl"
-                />
-                <motion.div
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: [0, -5, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                  className="absolute bottom-20 right-10 w-32 h-32 bg-linear-to-br from-pink-400 to-purple-500 rounded-full opacity-70 blur-2xl"
-                />
-              </div>
             </motion.div>
           </div>
         </div>
