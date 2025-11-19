@@ -180,7 +180,7 @@ const SkillsTransform = () => {
           </motion.div>
 
           <motion.div 
-            className="flex justify-center mt-12" 
+            className="flex justify-center mt-10" 
             variants={itemVariants}
             whileHover={{ x: 5 }}
           >

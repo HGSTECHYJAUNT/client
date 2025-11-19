@@ -102,7 +102,7 @@ const ReadyFuture = () => {
                 className="group rounded-xl sm:rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <div
-                  className={`relative h-48 sm:h-56 rounded-none overflow-hidden bg-gradient-to-br ${career.color} flex items-end p-4 sm:p-6`}
+                  className={`relative h-48 sm:h-56 rounded-none overflow-hidden bg-linear-to-br ${career.color} flex items-end p-4 sm:p-6`}
                 >
                   <Image
                     src={career.image}
@@ -140,7 +140,7 @@ const ReadyFuture = () => {
           </motion.div>
 
           <motion.div
-            className="flex justify-center mt-10 sm:mt-12 md:mt-16"
+            className="flex justify-center mt-10"
             variants={itemVariants}
             whileHover={{ x: 5 }}
           >
