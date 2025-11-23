@@ -10,7 +10,7 @@ const AssessMent = async ({ params }: { params: Promise<{ id: string }> }) => {
       <div className="flex items-center justify-end">
         <Image
           src="/assessment-image.png"
-          className="max-w-[18rem] object-center object-cover max-h-36"
+          className="max-w-[18rem] object-center object-cover max-h-26"
           alt=""
           width={500}
           height={500}
@@ -18,10 +18,10 @@ const AssessMent = async ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
       <div className="w-full">
         {/*  */}
-        <div className="mx-auto">
+        <div className="mx-auto mb-10 flex justify-center">
           <Image
             src="/skill-link-logo.png"
-            className="object-center object-cover"
+            className="object-center h-12 max-w-[20rem] object-cover"
             alt=""
             width={500}
             height={500}
