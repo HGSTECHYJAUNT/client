@@ -4,7 +4,16 @@ import React, { PropsWithChildren } from "react";
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex h-screen max-h-screen overflow-clip">
-      <main className="flex-2">{children}</main>
+      <div className="fixed top-3  left-[3%]">
+        <Image
+          src={"/icons/auth-logo.svg"}
+          alt="Auth Logo"
+          className="max-w-[10rem]"
+          width={200}
+          height={200}
+        />
+      </div>
+      <main className="flex-2 flex justify-center items-center">{children}</main>
       <div className="h-full flex items-center justify-center  flex-col max-lg:hidden relative flex-3 overflow-clip bg-[#0F052E]">
         {/*==== Blob==== */}
         <div
@@ -44,9 +53,9 @@ const Layout = ({ children }: PropsWithChildren) => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="mt-6  font-(family-name:--font-geist) text-3xl xl:text-[40px] text-left  leading-[120%] font-light">
-                Your personalized roadmap is ready <br /> instantly. The assessment takes almost no
-                time, placing your career on the fast track today.
+              <p className="mt-6 font-(family-name:--font-geist) text-3xl xl:text-[35px] text-left  leading-[120%] font-light">
+                Your personalized roadmap is ready instantly. The assessment takes almost no time,
+                placing your career on the fast track today.
               </p>
               <p className="mt-6">
                 <span>Adedokun Daniel</span>

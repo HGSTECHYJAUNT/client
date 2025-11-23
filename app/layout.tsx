@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Manrope, Inter, Geist } from "next/font/google";
 import "./globals.css";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/config/query";
+import QueryClient from "@/providers/QueryClient";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -38,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${geist.className} ${inter.variable} ${ibmPlexSans.variable} antialiased`}
       >
-        {children}
+        <QueryClient>{children}</QueryClient>
       </body>
     </html>
   );
