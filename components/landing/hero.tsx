@@ -87,7 +87,7 @@ const Hero = () => {
                   className="w-full sm:w-auto"
                 >
                   <Link
-                    href="/find-career-path"
+                    href="/main/learning"
                     className="inline-flex w-full sm:w-auto items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#3712A8] font-bold text-sm sm:text-base rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl text-center group"
                   >
                     Find My Career Path
@@ -101,7 +101,7 @@ const Hero = () => {
                   className="w-full sm:w-auto"
                 >
                   <Link
-                    href="/get-started"
+                    href="/main/dashboard"
                     className="inline-flex w-full sm:w-auto items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-bold text-sm sm:text-base rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 text-center group"
                   >
                     Get Started
