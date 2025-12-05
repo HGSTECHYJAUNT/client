@@ -74,7 +74,7 @@ const SettingsPage: React.FC = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="max-w-5xl mx-auto py-8 px-4"
+      className=" px-4 py-6 sm:px-6"
     >
       {/* Page Header */}
       <div className="mb-8">
@@ -121,7 +121,7 @@ const SettingsPage: React.FC = () => {
           <div className={`${bgColor} border ${borderColor} rounded-2xl p-8`}>
             <h2 className={`text-2xl font-bold ${textColor} mb-6`}>Profile Picture</h2>
             <div className="flex items-center gap-6">
-              <div className="w-24 h-24 rounded-xl bg-gradient-to-br from-[#4B19E6] to-purple-600 flex items-center justify-center text-white text-3xl font-bold">
+              <div className="w-24 h-24 rounded-xl bg-linear-to-r from-[#4B19E6] to-[#3712A8] text-white shadow-md shadow-[#4B19E6]/30 font-medium flex items-center justify-center text-3xl font-bold">
                 MS
               </div>
               <button

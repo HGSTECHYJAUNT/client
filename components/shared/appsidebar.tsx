@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useSidebar } from "@/components/ui/sidebar";
 import { useTheme } from "@/components/providers/theme-provider";
+import { cn } from "@/lib/utils";
 
 interface SidebarItem {
   title: string;
@@ -57,14 +58,15 @@ const AppSidebar: React.FC = () => {
     <>
       <aside
         data-sidebar="sidebar"
-        className={`
-        fixed left-0 top-0 h-screen
-        bg-[#0F052E]
-        border-r border-[#4B19E6]/20
-        flex flex-col transition-all duration-300 ease-in-out
-        ${isMobile ? `${openMobile ? "translate-x-0 z-50" : "-translate-x-full z-50"} w-64 absolute` : `${isCollapsed ? "w-[4.3rem] pt-5" : "w-64"} z-40`}
-        shadow-xl scrollbar-custom
-      `}
+        className={cn(
+          "fixed left-0 top-0 h-screen",
+          "bg-[#0F052E] border-r border-[#4B19E6]/20",
+          "flex flex-col transition-all duration-300 ease-in-out",
+          "shadow-xl scrollbar-custom",
+          isMobile
+            ? `${openMobile ? "translate-x-0 z-50" : "-translate-x-full z-50"} w-64`
+            : `${isCollapsed ? "w-[4.3rem] pt-5" : "w-64"} z-40`
+        )}
       >
         {/* Logo and Brand */}
         <div className="flex-none px-2">

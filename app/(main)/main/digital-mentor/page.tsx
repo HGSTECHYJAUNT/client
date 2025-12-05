@@ -10,7 +10,7 @@ const DigitalMentorPage: React.FC = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="space-y-8"
+      className="space-y-8 px-4 py-6 sm:px-6"
     >
       <div className="flex items-center gap-4">
         <Users className="w-8 h-8 text-purple-600" />
@@ -20,7 +20,7 @@ const DigitalMentorPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 p-12 text-center">
+      <div className="rounded-2xl bg-linear-to-br from-purple-50 to-blue-50 border border-purple-200 p-12 text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Digital Mentor</h2>
         <p className="text-gray-600">More content coming soon...</p>
       </div>

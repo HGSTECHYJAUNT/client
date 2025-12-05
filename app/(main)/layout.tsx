@@ -26,7 +26,7 @@ function MainContent({ children }: { children: React.ReactNode }) {
     if (isMobile && openMobile) {
       setOpenMobile(false);
     }
-  }, [pathname]);
+  }, [pathname, isMobile, openMobile, setOpenMobile]);
 
   return (
     <div className="min-h-screen w-full bg-gray-100">
@@ -55,9 +55,8 @@ function MainContent({ children }: { children: React.ReactNode }) {
           <main className="flex-1 overflow-auto bg-[#EDE8FD] text-foreground transition-colors duration-300">
             <div
               className={`
-                min-h-screen w-full px-4 py-6 
+                min-h-screen w-full
                 transition-all duration-300 ease-in-out 
-                sm:px-6
                 ${isMobile ? "max-w-full" : isCollapsed ? "max-w-[calc(100vw-4.3rem)]" : "max-w-[calc(100vw-16rem)]"}
               `}
             >
@@ -74,7 +73,7 @@ function MainContent({ children }: { children: React.ReactNode }) {
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={true}>
       <MainContent>{children}</MainContent>
     </SidebarProvider>
   );

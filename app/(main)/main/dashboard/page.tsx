@@ -227,7 +227,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 pb-16">
+    <div className="flex flex-col-reverse xl:flex-row gap-4 lg:gap-6 pb-16 px-4 py-6 sm:px-6">
       {/* Main Content */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -578,7 +578,7 @@ const Dashboard: React.FC = () => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="hidden lg:flex lg:w-80 lg:sticky lg:top-6 lg:flex-col lg:gap-6 lg:pb-6 bg-white rounded-2xl h-fit"
+        className="xl:flex xl:w-80 xl:sticky xl:top-6 xl:flex-col xl:gap-6 xl:pb-6 bg-white rounded-2xl h-fit"
       >
         {/* Your Profile Card */}
         <div className="p-6 flex flex-col ">

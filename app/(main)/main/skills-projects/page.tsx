@@ -10,7 +10,7 @@ const SkillsProjectsPage: React.FC = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="space-y-8"
+      className="space-y-8 px-4 py-6 sm:px-6"
     >
       <div className="flex items-center gap-4">
         <CheckSquare className="w-8 h-8 text-purple-600" />

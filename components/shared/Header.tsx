@@ -1,10 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Heart, Settings, Bell, User, Sun, Moon } from "lucide-react";
+import {
+  Search,
+  Heart,
+  Settings,
+  Bell,
+  User,
+  Sun,
+  Moon,
+  Menu,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "@/components/providers/theme-provider";
+import { useSidebar } from "@/components/ui/sidebar";
 
 interface HeaderProps {
   userName?: string;
@@ -12,10 +24,27 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ userName = "Daniel" }) => {
   const { theme, setTheme } = useTheme();
+  const { isMobile, state, toggleSidebar, setOpenMobile, openMobile, setOpen, open } = useSidebar();
   const isDark = theme === "dark";
+  const isCollapsed = state === "collapsed";
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
+  };
+
+  const handleSidebarOpen = () => {
+    if (isMobile) {
+      setOpenMobile(true);
+    } else {
+      if (isCollapsed) {
+        setOpen(true);
+      }
+    }
   };
 
   // Light theme is the default (light background, dark text)
@@ -33,10 +62,27 @@ const Header: React.FC<HeaderProps> = ({ userName = "Daniel" }) => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`${headerInputBg} px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-40`}
+        className={`${headerInputBg} px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-30`}
       >
         <div className="max-w-9xl mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-1">
+            {/* Desktop Sidebar Toggle */}
+            {mounted && !isMobile && (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleSidebarOpen}
+                className={`p-2 rounded-lg transition-colors ${headerIconColor} ${headerHoverBg}`}
+                title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+              >
+                {isCollapsed ? (
+                  <ChevronRight className="w-5 h-5" />
+                ) : (
+                  <ChevronLeft className="w-5 h-5" />
+                )}
+              </motion.button>
+            )}
+    
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -92,14 +138,14 @@ const Header: React.FC<HeaderProps> = ({ userName = "Daniel" }) => {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-3">
               {/* Theme Toggle */}
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleTheme}
                 className={`p-2 rounded-lg transition-colors ${headerIconColor} ${headerHoverBg}`}
               >
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </motion.button>
+              </motion.button> */}
 
               {/* Settings Link */}
               <Link href="/main/settings">
@@ -132,9 +178,21 @@ const Header: React.FC<HeaderProps> = ({ userName = "Daniel" }) => {
                   whileHover={{ scale: 1.05 }}
                   className={`w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center text-white font-bold text-sm cursor-pointer ${isDark ? "bg-linear-to-br from-blue-400 to-purple-500" : "bg-linear-to-br from-[#3C14B8] to-[#3712A8]"}`}
                 >
-                  {userName.charAt(0)}
+                  {userName?.charAt(0) || "U"}
                 </motion.div>
               </Link>
+
+              {/* Mobile Sidebar Trigger */}
+              {mounted && isMobile && (
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={toggleSidebar}
+                  className={`p-2 rounded-lg transition-colors ${headerIconColor} ${headerHoverBg}`}
+                >
+                  <Menu className="w-5 h-5" />
+                </motion.button>
+              )}
             </div>
           </div>
         </div>
