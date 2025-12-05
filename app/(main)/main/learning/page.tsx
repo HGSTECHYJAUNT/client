@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
+import { Clock, BookOpen, Heart, Grid3X3 } from "lucide-react";
 import LearningCard from "@/components/main/learning/LearningCard";
 
 const Learning: React.FC = () => {
@@ -29,9 +29,9 @@ const Learning: React.FC = () => {
   };
 
   const tabs = [
-    { id: "all", label: "All courses" },
-    { id: "lists", label: "My Lists" },
-    { id: "favorites", label: "Favourites" },
+    { id: "all", label: "All courses", icon: Grid3X3 },
+    { id: "lists", label: "My Lists", icon: BookOpen },
+    { id: "favorites", label: "Favourites", icon: Heart },
   ];
 
   const courses = [
@@ -101,21 +101,27 @@ const Learning: React.FC = () => {
 
           {/* Tabs */}
           <div className="flex gap-6 px-4 sm:px-6 lg:px-8">
-            {tabs.map((tab) => (
-              <motion.button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                // whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                className={`pb-3 font-medium text-base transition-all duration-300 border-b-4 relative ${
-                  activeTab === tab.id
-                    ? "text-white border-white"
-                    : "text-white/60 border-transparent hover:text-white/80"
-                }`}
-              >
-                {tab.label}
-              </motion.button>
-            ))}
+            {tabs.map((tab) => {
+              return (
+                <motion.div
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  // whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                  className={`pb-3 font-medium text-base transition-all duration-300 border-b-4 relative flex items-center gap-2 ${
+                    activeTab === tab.id
+                      ? "text-white border-white"
+                      : "text-white/60 border-transparent hover:text-white/80"
+                  }`}
+                >
+                  <div>
+                    <tab.icon className="w-5 h-5 max-xs:flex invisible" />
+                    <span className="max-xs:hidden flex">{tab.label}</span>                    
+                  </div>
+
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>
@@ -202,7 +208,7 @@ const Learning: React.FC = () => {
         {/* Pagination */}
         <motion.div variants={itemVariants} className="flex items-center justify-center gap-2">
           <button className="px-4 py-2 text-gray-500 hover:text-gray-700 transition-colors text-sm font-medium">
-            ← Previous
+            ← <span className="hidden xs:flex">Previous</span>
           </button>
 
           <div className="flex items-center gap-2">
@@ -219,7 +225,7 @@ const Learning: React.FC = () => {
           </div>
 
           <button className="px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium">
-            Next →
+            <span className="hidden xs:flex">Next</span> →
           </button>
         </motion.div>
       </div>

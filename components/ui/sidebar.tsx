@@ -148,7 +148,7 @@ export const Sidebar = React.forwardRef<
           ref={ref}
           className={cn(
             "flex flex-col",
-            "w-[var(--sidebar-width-icon)]",
+            "w-(--sidebar-width-icon)",
             "border-r bg-background",
             className
           )}
@@ -174,8 +174,8 @@ export const Sidebar = React.forwardRef<
         ref={ref}
         className={cn(
           "md:flex flex-col fixed",
-          "data-[state=expanded]:w-[var(--sidebar-width)]",
-          "data-[state=collapsed]:w-[var(--sidebar-width-icon)]",
+          "data-[state=expanded]:w-(--sidebar-width)",
+          "data-[state=collapsed]:w-(--sidebar-width-icon)",
           // "h-[calc(100vh-4rem)]",
           "sticky top-16",
           "transition-[width] duration-300 ease-in-out",
@@ -242,7 +242,7 @@ export const SidebarInset = React.forwardRef<
     ref={ref}
     className={cn(
       "relative flex min-h-screen flex-1 flex-col bg-background",
-      "peer-data-[variant=inset]:min-h-[calc(100vh-theme(spacing.4))] md:peer-data-[variant=inset]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=inset]:ml-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow",
+      "peer-data-[variant=inset]:min-h-[calc(100vh-theme(--spacing.4))] md:peer-data-[variant=inset]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=inset]:ml-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow",
       className
     )}
     {...props}
@@ -317,7 +317,7 @@ export const SidebarMenuButton = React.forwardRef<
       data-active={isActive}
       className={cn(
         "flex w-full items-center gap-2 px-6 py-[18px] text-sm",
-        "outline-none relative z-[1] md:tracking-wide font-semibold",
+        "outline-none relative z-1 md:tracking-wide font-semibold",
         "focus-visible:ring-2 focus-visible:ring-ring",
         className
       )}
