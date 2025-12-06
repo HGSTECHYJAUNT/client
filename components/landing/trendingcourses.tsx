@@ -96,7 +96,7 @@ const TrendingCourses = () => {
   };
 
   return (
-    <section className="w-full mx-auto  px-4 sm:px-6 lg:px-12 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="w-full mx-auto  px-4 sm:px-6 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="mx-auto">
         <motion.div
           variants={containerVariants}
@@ -158,7 +158,7 @@ const TrendingCourses = () => {
           </motion.div>
 
           <motion.div
-            className="flex justify-center mt-10 sm:mt-12 md:mt-16"
+            className="flex justify-center mt-10"
             variants={itemVariants}
             whileHover={{ x: 5 }}
           >

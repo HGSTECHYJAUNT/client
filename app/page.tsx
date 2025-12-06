@@ -1,15 +1,15 @@
-import Navbar from "@/container/landing/navbar";
-import Hero from "@/container/landing/hero";
-import FreeCourses from "@/container/landing/freecourses";
-import CareerMaster from "@/container/landing/careermaster";
-import SkillsTransform from "@/container/landing/skillstransform";
-import GetVerified from "@/container/landing/getverified";
-import ReadyFuture from "@/container/landing/readyfuture";
-import TrendingCourses from "@/container/landing/trendingcourses";
-import ReportSection from "@/container/landing/reportsection";
-import FAQ from "@/container/landing/faq";
-import StartForFree from "@/container/landing/startforfree";
-import Footer from "@/container/landing/footer";
+import Navbar from "@/components/landing/navbar";
+import Hero from "@/components/landing/hero";
+import FreeCourses from "@/components/landing/freecourses";
+import CareerMaster from "@/components/landing/careermaster";
+import SkillsTransform from "@/components/landing/skillstransform";
+import GetVerified from "@/components/landing/getverified";
+import ReadyFuture from "@/components/landing/readyfuture";
+import TrendingCourses from "@/components/landing/trendingcourses";
+import ReportSection from "@/components/landing/reportsection";
+import FAQ from "@/components/landing/faq";
+import StartForFree from "@/components/landing/startforfree";
+import Footer from "@/components/landing/footer";
 
 
 export default function Home () {
