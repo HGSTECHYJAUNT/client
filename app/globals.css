@@ -26,3 +26,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), Helvetica, sans-serif;
 }
+
+/* Custom Scrollbar */
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(75, 25, 230, 0.4) transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(75, 25, 230, 0.4);
+  border-radius: 3px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 25, 230, 0.6);
+}
