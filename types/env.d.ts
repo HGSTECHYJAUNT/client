@@ -1,0 +1,11 @@
+// env.d.ts
+declare namespace NodeJS {
+  interface ProcessEnv {
+    NODE_ENV: "development" | "production" | "test";
+    PORT?: string;
+    DATABASE_URL: string;
+    JWT_SECRET: string;
+    BASE_URL: string;
+    NEXT_PULBIC_SERVER_URL: string;
+  }
+}

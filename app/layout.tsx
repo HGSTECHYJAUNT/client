@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Manrope, Inter } from "next/font/google";
+import { IBM_Plex_Sans, Manrope, Inter, Geist } from "next/font/google";
 import "./globals.css";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/config/query";
+import QueryClient from "@/providers/QueryClient";
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
+});
+
+const geist = Geist({
+  variable: "--font-geist",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -30,9 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${inter.variable} ${ibmPlexSans.variable} antialiased`}>
-        {children}
+      <body
+        className={`${manrope.variable} ${geist.className} ${inter.variable} ${ibmPlexSans.variable} antialiased`}
+      >
+        <QueryClient>{children}</QueryClient>
       </body>
     </html>
   );
-};
+}
