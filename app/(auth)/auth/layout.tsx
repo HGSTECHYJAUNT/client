@@ -8,7 +8,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <Image
           src={"/icons/auth-logo.svg"}
           alt="Auth Logo"
-          className="max-w-[10rem]"
+          className="max-w-40"
           width={200}
           height={200}
         />
@@ -30,6 +30,26 @@ const Layout = ({ children }: PropsWithChildren) => {
               height={500}
             />
           </div>
+          {/* <motion.div
+            animate={{
+              rotate: [0, 10, 0],
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute inset-0 flex"
+          >
+            <Image
+              src={BoxImage}
+              alt="Assessment"
+              width={300}
+              height={300}
+              className="w-80 h-80 object-contain opacity-90"
+            />
+          </motion.div> */}
           <div className="flex w-[90%] mx-auto">
             <div className="text-white">
               <svg
