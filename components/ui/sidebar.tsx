@@ -130,9 +130,9 @@ export const Sidebar = React.forwardRef<
 >(
   (
     {
-      side = "left",
-      variant = "floating",
-      collapsible = "icon",
+      // side = "left",
+      // variant = "floating",
+      // collapsible = "icon",
       className,
       children,
       ...props
@@ -308,7 +308,8 @@ export const SidebarMenuButton = React.forwardRef<
     isActive?: boolean;
     tooltip?: string;
   }
->(({ className, asChild = false, isActive, tooltip, ...props }, ref) => {
+>(({ className, asChild = false, isActive, ...props }, ref) => {
+  // >(({ className, asChild = false, isActive, tooltip, ...props }, ref) => {
   const Comp = asChild ? Slot : "button";
   return (
     <Comp
