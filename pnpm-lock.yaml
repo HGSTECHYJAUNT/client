@@ -17,15 +17,12 @@ importers:
       chart.js:
         specifier: ^4.5.1
         version: 4.5.1
-<<<<<<< HEAD
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-=======
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
->>>>>>> 0a609dd6886067f124a3d273052bf456cd2331d9
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       framer-motion:
         specifier: ^12.23.24
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
