@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Globe, Mail } from "lucide-react";
-import Image from "next/image";
-import BoxImage from "@/public/assessment-image.png";
+// import Image from "next/image";
+// import BoxImage from "@/public/assessment-image.png";
 
 interface SignUpProps {
   onContinue: (email: string) => void;
@@ -30,7 +30,7 @@ const SignUpPage: React.FC<SignUpProps> = ({ onContinue }) => {
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-1/2 bg-white flex flex-col justify-center px-16 py-12"
+        className=" bg-white flex flex-col justify-center px-16 py-12"
       >
         <div className="max-w-md">
           {/* Content */}
@@ -85,8 +85,8 @@ const SignUpPage: React.FC<SignUpProps> = ({ onContinue }) => {
                 onClick={() => handleSocialLogin("google")}
                 className="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-3 font-medium text-gray-700"
               >
-                  <Globe />
-                  Sign up with Google
+                <Globe />
+                Sign up with Google
               </motion.button>
 
               {/* Slack */}
@@ -123,13 +123,12 @@ const SignUpPage: React.FC<SignUpProps> = ({ onContinue }) => {
       </motion.div>
 
       {/* Right Section - Testimonial & Stats */}
-      <motion.div
+      {/* <motion.div
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
         className="py-20 hidden lg:flex w-full bg-radial to-[#1a0e3e] via-[#2d1b69] from-[rgb(60,20,184)] p-12 flex-col  text-white relative overflow-hidden"
       >
-        {/* Assessment Image */}
         <motion.div
           animate={{
             rotate: [0, 10, 0],
@@ -151,7 +150,6 @@ const SignUpPage: React.FC<SignUpProps> = ({ onContinue }) => {
           />
         </motion.div>
 
-        {/* Testimonial Content */}
         <div className="relative z-10 max-w-xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -188,7 +186,6 @@ const SignUpPage: React.FC<SignUpProps> = ({ onContinue }) => {
           </motion.div>
         </div>
 
-        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -209,7 +206,7 @@ const SignUpPage: React.FC<SignUpProps> = ({ onContinue }) => {
             <p className="text-sm text-white/80">INDUSTRIES</p>
           </div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
