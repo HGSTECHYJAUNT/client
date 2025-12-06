@@ -5,7 +5,7 @@ import SetPasswordPage from "@/components/signup/SetPasswordPage";
 import SignUpPage from "@/components/signup/SignupPage";
 import { AnimatePresence } from "framer-motion";
 
-const page = () => {
+const Page = () => {
   const [step, setStep] = useState(1);
   const [userData, setUserData] = useState({ email: "", name: "", password: "" });
 
@@ -43,4 +43,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
